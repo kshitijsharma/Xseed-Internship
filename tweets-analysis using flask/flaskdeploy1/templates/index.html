@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tweets Search</title>
+    </head>
+    <body>
+        <h1>Enter the details below:</h1>
+
+        <form action="{{ url_for('hello') }}" method="post">
+	Enter the key word to search for:	
+        <input type="text" name="search_terms" placeholder="Enter Your word to search for"></br>
+        <button>Submit</button>
+        </form>
+    </body>
+</html>
