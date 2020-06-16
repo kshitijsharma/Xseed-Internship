@@ -1,0 +1,29 @@
+[
+        {
+        "id": 1,
+        "name": "Iteam 1",
+        "cost": "RS 2000"
+    },
+    {
+        "id": 2,
+        "name": "Iteam 2",
+        "cost": "RS 3260"
+    },
+    {
+        "id": 3,
+        "name": "Iteam 3",
+        "cost": "RS 4000"
+    },
+    {
+        "id": 4,
+        "name": "Iteam 4",
+        "cost": "RS 1250"
+    },
+    {
+        "id": 5,
+        "name": "Iteam 5",
+        "cost": "RS 6000"
+    }
+  ]
+
+  
