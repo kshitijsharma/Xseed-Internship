@@ -20,9 +20,9 @@
                   tag="ul"
                   v-model="list"
                   v-bind="dragOptions"
-                  :move="onMove"
+                  :move="handlemove"
+                  @end="handleend"
                   @start="isDragging=true"
-                  @end="isDragging=false"
                 >
                   <transition-group type="transition" :name="'flip-list'">
                     <li
@@ -133,6 +133,21 @@ export default {
       return (
         (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
       );
+    },
+    handleend() {
+      this.futureItem = this.list[this.futureIndex];
+      this.movingItem = this.list[this.movingIndex];
+      const _items = Object.assign([], this.list);
+      _items[this.futureIndex] = this.movingItem;
+      _items[this.movingIndex] = this.futureItem;
+
+      this.list = _items;
+    },
+    handlemove(e) {
+      const { index, futureIndex } = e.draggedContext;
+      this.movingIndex = index;
+      this.futureIndex = futureIndex;
+      return false; // disable sort
     }
   },
   computed: {
